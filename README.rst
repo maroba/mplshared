@@ -10,17 +10,19 @@ Installation
     pip install --upgrade mplshared
 
 
-SlopeLine
-::::::::::::
+Usage
+-----
+
+Slope Lines
+:::::::::::
 
 Linear Plots
 ------------
 
-.. plot:: pyplots/slopeline_linear_1.py
-   :include-source:
+.. image:: docs/pyplots/slopeline_linear.png
+
 
 Double Logarithmic Plots
 ------------------------
 
-.. plot:: pyplots/slopeline_loglog.py
-   :include-source:
+.. image:: docs/pyplots/slopeline_loglog.png

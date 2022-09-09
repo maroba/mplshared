@@ -8,7 +8,7 @@ email = 'matthias.r.baer@googlemail.com'
 description = 'Some tools for matplotlib'
 name = 'mplshared'
 year = '2022'
-url = ''
+url = 'https://github.com/maroba/mplshared'
 version = '0.0.1'
 
 setup(
@@ -22,7 +22,7 @@ setup(
     include_package_data=True,
     license='MIT',
     description=description,
-    long_description=open('README.md').read() if exists('README.md') else '',
+    long_description=open('README.rst').read() if exists('README.rst') else '',
     long_description_content_type="text/markdown",
     install_requires=['sphinx',
                       ],
