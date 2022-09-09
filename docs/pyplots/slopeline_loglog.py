@@ -22,4 +22,5 @@ slope_line = SlopeLine(slope=2,
 plt.loglog(x, y)
 plt.gca().add_line(slope_line)
 plt.grid()
+plt.savefig('slopeline_loglog.png')
 plt.show()
