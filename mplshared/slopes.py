@@ -2,8 +2,29 @@ import matplotlib as mpl
 
 
 class SlopeLine(mpl.lines.Line2D):
+    """A straight line with given slope through given point.
+
+       Can be used for linear or loglog plots.
+    """
 
     def __init__(self, slope, through, domain, scale='linear', style=None):
+        """Initializes SlopeLine object.
+
+        Parameters
+        ----------
+        slope : float
+            The slope of the slope line.
+        through : 2-tuple of floats
+            x-y coordinates of point that the slope line shall cross.
+        domain : 2-tuple of floats
+            Plot the slope line from x0 to x1, where domain is (x0, x1).
+        scale : str, default='linear'
+            Scale of the underlying plot.
+            Possible values: 'linear', 'loglog'
+        style : dict
+            Specifies the style of the slope line. Allows the same arguments as matplotlib.lines.Line2D.
+            See https://matplotlib.org/stable/api/_as_gen/matplotlib.lines.Line2D.html
+        """
 
         style = style or {
             'color': '#505050', 'dashes': (5, 2, 5, 2)
