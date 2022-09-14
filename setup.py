@@ -26,6 +26,7 @@ setup(
     long_description_content_type="text/markdown",
     install_requires=['sphinx', 'matplotlib', 'numpy'
                       ],
+    test_requires=['numpy', 'matplotlib'],
     python_requires=">=3.6",
     classifiers=['Operating System :: OS Independent',
                  'Programming Language :: Python :: 3',
