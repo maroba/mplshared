@@ -3,6 +3,16 @@ mplshared
 
 Some tools for matplotlib.
 
+|PyPI version fury.io| |PyPI license|
+
+.. |PyPI version fury.io| image:: https://badge.fury.io/py/mplshared.svg
+   :target: https://pypi.python.org/pypi/mplshared/
+
+.. |PyPI license| image:: https://img.shields.io/pypi/l/mplshared.svg
+   :target: https://pypi.python.org/pypi/mplshared/
+
+
+
 Usage
 -----
 
