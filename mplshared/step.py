@@ -128,6 +128,17 @@ class StepFunctionLine(matplotlib.lines.Line2D):
     def __call__(self, x):
         return self.stepfunc(x)
 
+    def autolims(self, plt):
+        if not self.axes:
+            return
+        self.axes.relim()
+        self.axes.autoscale_view()
+        plt.draw()
+
+    def setp(self, **kwargs):
+        matplotlib.artist.setp(self, **kwargs)
+        self._kwargs = kwargs
+
     def _convert_data(self, stepfunc, baseline):
         xdata = []
         ydata = []

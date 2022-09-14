@@ -14,7 +14,7 @@ Usage
 -----
 
 Slope Lines
-------------
+:::::::::::
 
 In plots with linearly scaling axes:
 
@@ -53,6 +53,30 @@ If you have a loglog plot, just change the scale argument:
                        scale='loglog',
                        style={'color': 'red'}
                        )
+
+
+.. image:: docs/pyplots/slopeline_loglog.png
+    :width: 600
+    :align: center
+
+
+StepFunctionLine
+----------------
+
+.. code-block:: ipython
+
+    import numpy as np
+    import matplotlib.pyplot as plt
+
+    from mplshared import StepFunctionLine
+
+    x = np.linspace(-3, 3, 20)
+    y = np.sin(x)
+
+    sf1 = StepFunctionLine(x, y, linewidth=3, color='red')
+    plt.gca().add_line(sf1)
+    sf1.autolims(plt)
+    plt.show()
 
 
 .. image:: docs/pyplots/slopeline_loglog.png

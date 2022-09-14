@@ -17,3 +17,9 @@ Double Logarithmic Plots
 .. plot:: pyplots/slopeline_loglog.py
    :include-source:
 
+
+StepFunction
+::::::::::::
+
+.. plot:: pyplots/stepfunction_1.py
+    :include-source:
