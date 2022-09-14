@@ -3,15 +3,13 @@ mplshared
 
 Some tools for matplotlib.
 
-Installation
-------------
-
-.. code-block::
-    pip install --upgrade mplshared
-
-
 Usage
 -----
+
+.. code-block::
+
+    pip install --upgrade mplshared
+
 
 Slope Lines
 :::::::::::
