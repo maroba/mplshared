@@ -6,15 +6,18 @@ from numpy.testing import assert_array_almost_equal, assert_allclose
 
 from mplshared.slopes import SlopeLine
 
-np.random.seed(42)
-
 
 def noisify(arr, amplitude=1):
+    np.random.seed(42)
     noise = (np.random.rand(*arr.shape) - 0.5) * amplitude
     return arr + noise
 
 
 class TestSlopeLine(unittest.TestCase):
+
+    def setUp(self):
+        plt.cla()
+        plt.clf()
 
     def test_linear_scale_plot_from_slope_and_through(self):
         x = np.linspace(0, 10, 100)
@@ -30,7 +33,7 @@ class TestSlopeLine(unittest.TestCase):
         xdata, ydata = actual_line.get_data()
         assert [0, 10] == xdata
         assert_array_almost_equal([2.656, 22.656], ydata, decimal=3)
-        plt.show()
+        #plt.show()
 
     def test_loglog_scale_plot_from_slope_and_through(self):
         x = np.logspace(0, 2, 100)
@@ -52,4 +55,4 @@ class TestSlopeLine(unittest.TestCase):
         xdata, ydata = actual_line.get_data()
         assert_array_almost_equal([1, 100], xdata)
         assert_allclose([9.909e-01, 9.909e+03], ydata, rtol=1.E-4)
-        plt.show()
+        #plt.show()
