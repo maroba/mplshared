@@ -24,7 +24,7 @@ setup(
     description=description,
     long_description=open('README.rst').read() if exists('README.rst') else '',
     long_description_content_type="text/markdown",
-    install_requires=['sphinx',
+    install_requires=['sphinx', 'matplotlib', 'numpy'
                       ],
     python_requires=">=3.6",
     classifiers=['Operating System :: OS Independent',
