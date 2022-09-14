@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from numpy.testing import assert_allclose
 
-from mplshared.step import StepFunction
+from mplshared.step import StepFunctionLine
 
 
 class TestStepFunction(unittest.TestCase):
@@ -12,15 +12,11 @@ class TestStepFunction(unittest.TestCase):
         plt.cla()
         plt.clf()
 
-
     def test_one_step_function(self):
         x = [0, 1, 2, 3, 4]
         y = [0.5, 1, 4, 9, 16]
 
-        plt.plot(x, y, 'o')
-        # plt.step(x, y) # not what I want
-
-        sf = StepFunction(x, y, linewidth=3)
+        sf = StepFunctionLine(x, y, linewidth=3)
         plt.gca().add_line(sf)
 
         assert_allclose(
@@ -30,7 +26,7 @@ class TestStepFunction(unittest.TestCase):
         )
 
         plt.grid()
-        #plt.show()
+        # plt.show()
 
     def test_multiply_stepfunction(self):
         x = [0, 1, 2, 3, 4]
@@ -39,7 +35,7 @@ class TestStepFunction(unittest.TestCase):
         plt.plot(x, y, 'o')
         # plt.step(x, y) # this is not what I want
 
-        sf = StepFunction(x, y, linewidth=3)
+        sf = StepFunctionLine(x, y, linewidth=3)
         plt.gca().add_line(sf)
 
         sf2 = 2 * sf
@@ -51,4 +47,39 @@ class TestStepFunction(unittest.TestCase):
         assert_allclose(sf.y, [0.5, 1, 4, 9, 16])
 
         plt.grid()
-        #plt.show()
+        # plt.show()
+
+    def test_add_to_stepfunction(self):
+        x = [0, 1, 2, 3, 4]
+        y = [0.5, 1, 4, 9, 16]
+
+        plt.plot(x, y, 'o')
+        # plt.step(x, y) # this is not what I want
+
+        sf = StepFunctionLine(x, y, linewidth=3)
+        plt.gca().add_line(sf)
+
+        sf2 = 2 + sf
+        assert_allclose(sf2.y, [2.5, 3, 6, 11, 18])
+        assert_allclose(sf.y, [0.5, 1, 4, 9, 16])
+
+
+        sf3 = sf + 3
+        assert_allclose(sf3.y, [3.5, 4, 7, 12, 19])
+        assert_allclose(sf.y, [0.5, 1, 4, 9, 16])
+
+        plt.grid()
+        # plt.show()
+
+    def test_add_two_stepfunctions(self):
+        x = [0, 1, 2, 3, 4]
+        y = [0.5, 1, 4, 9, 16]
+        sf = StepFunctionLine(x, y)
+
+        x2 = [0, 1.5, 2, 3, 4]
+        y2 = [0.5, 1, 4, 9, 16]
+        sf2 = StepFunctionLine(x2, y2)
+
+        actual = sf + sf2
+        plt.gca().add_line(actual)
+
