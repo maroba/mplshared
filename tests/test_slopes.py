@@ -1,6 +1,8 @@
 import unittest
-import numpy as np
+
 import matplotlib.pyplot as plt
+import numpy as np
+from numpy.testing import assert_array_almost_equal, assert_allclose
 
 from mplshared.slopes import SlopeLine
 
@@ -23,6 +25,11 @@ class TestSlopeLine(unittest.TestCase):
         plt.plot(x, y)
         plt.gca().add_line(slope_line)
         plt.grid()
+        actual_line = plt.gca().lines[1]
+        assert isinstance(actual_line, SlopeLine)
+        xdata, ydata = actual_line.get_data()
+        assert [0, 10] == xdata
+        assert_array_almost_equal([2.656, 22.656], ydata, decimal=3)
         plt.show()
 
     def test_loglog_scale_plot_from_slope_and_through(self):
@@ -39,4 +46,10 @@ class TestSlopeLine(unittest.TestCase):
         plt.loglog(x, y)
         plt.gca().add_line(slope_line)
         plt.grid()
+
+        actual_line = plt.gca().lines[1]
+        assert isinstance(actual_line, SlopeLine)
+        xdata, ydata = actual_line.get_data()
+        assert_array_almost_equal([1, 100], xdata)
+        assert_allclose([9.909e-01, 9.909e+03], ydata, rtol=1.E-4)
         plt.show()

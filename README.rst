@@ -14,10 +14,10 @@ Usage
 -----
 
 Slope Lines
-:::::::::::
-
-Linear Plots
 ------------
+
+In plots with linearly scaling axes:
+
 
 .. code-block:: ipython
 
@@ -39,10 +39,9 @@ Linear Plots
 
 
 .. image:: docs/pyplots/slopeline_linear.png
+    :width: 600
+    :align: center
 
-
-Double Logarithmic Plots
-------------------------
 
 If you have a loglog plot, just change the scale argument:
 
@@ -57,3 +56,5 @@ If you have a loglog plot, just change the scale argument:
 
 
 .. image:: docs/pyplots/slopeline_loglog.png
+    :width: 600
+    :align: center
