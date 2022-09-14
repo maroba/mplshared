@@ -79,6 +79,6 @@ StepFunctionLine
     plt.show()
 
 
-.. image:: docs/pyplots/slopeline_loglog.png
+.. image:: docs/pyplots/stepfunction_1.png
     :width: 600
     :align: center
