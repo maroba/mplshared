@@ -1,7 +1,7 @@
-import matplotlib as mpl
+import matplotlib.lines as mlines
 
 
-class SlopeLine(mpl.lines.Line2D):
+class SlopeLine(mlines.Line2D):
     """A straight line with given slope through given point.
 
        Can be used for linear or loglog plots.

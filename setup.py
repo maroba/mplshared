@@ -9,7 +9,7 @@ description = 'Some tools for matplotlib'
 name = 'mplshared'
 year = '2022'
 url = 'https://github.com/maroba/mplshared'
-version = '0.1.0'
+version = '0.1.1'
 
 setup(
     name=name,

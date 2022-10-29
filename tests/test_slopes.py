@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from numpy.testing import assert_array_almost_equal, assert_allclose
 
-from mplshared.slopes import SlopeLine
+from mplshared import SlopeLine
 
 
 def noisify(arr, amplitude=1):
